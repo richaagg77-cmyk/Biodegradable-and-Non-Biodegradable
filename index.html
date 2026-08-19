@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Waste Classifier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+
+    <!-- Teachable Machine -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>♻️ AI Waste Classifier</h1>
+
+        <p class="subtitle">
+            Upload an image and let AI identify the type of waste.
+        </p>
+
+        <div class="buttons">
+            <label class="upload-btn">
+                📷 Upload Image
+                <input type="file" id="imageUpload" accept="image/*">
+            </label>
+
+            <button id="cameraBtn">
+                🎥 Use Camera
+            </button>
+        </div>
+
+        <div class="image-box">
+
+            <img id="uploadedImage" alt="Uploaded waste image">
+
+            <video id="camera" autoplay playsinline></video>
+
+            <p id="placeholder">
+                Your waste image will appear here
+            </p>
+
+        </div>
+
+        <button id="predictBtn">
+            🔍 Classify Waste
+        </button>
+
+        <div class="loading" id="loading">
+            Loading AI model...
+        </div>
+
+        <div class="results">
+
+            <h2>Prediction</h2>
+
+            <div id="prediction">
+                Upload an image to get started.
+            </div>
+
+        </div>
+
+        <div id="advice"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
