@@ -173,8 +173,8 @@ async function classifyImage(image) {
         // Sort from highest probability to lowest
         results.sort(
             (a, b) =>
-                a.probability -
-                b.probability
+                b.probability -
+                a.probability
         );
 
         displayResults(results);
